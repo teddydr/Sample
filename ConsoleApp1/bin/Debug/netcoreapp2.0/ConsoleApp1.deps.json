@@ -1,0 +1,38 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.0",
+    "signature": "f2df4d9909b781c4898f2cc4ae9b1c7e6a55b02b"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.0": {
+      "ConsoleApp1/1.0.0": {
+        "dependencies": {
+          "SimpleRuleEngine": "1.0.4.1"
+        },
+        "runtime": {
+          "ConsoleApp1.dll": {}
+        }
+      },
+      "SimpleRuleEngine/1.0.4.1": {
+        "runtime": {
+          "lib/net40/RuleEngine.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ConsoleApp1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SimpleRuleEngine/1.0.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xxbyNeBfnZFRLdont/0BObnNoPtZyc1n1aP1TX3HSWwRekpwA8MWM6SoyDD0MQIbu6F7Il6ghuqeN8gY6MXDGQ==",
+      "path": "simpleruleengine/1.0.4.1",
+      "hashPath": "simpleruleengine.1.0.4.1.nupkg.sha512"
+    }
+  }
+}

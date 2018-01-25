@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RuleEngine>
+	
+
+	<Rules>
+	<Rule id="RouteToC2" desc="RouteToC2" chainable="true"  priority="20">
+      <Condition><![CDATA[ (Bond<800000) AND (Favorite == 1) ]]></Condition>
+      <Actions>
+        <Evaluate factId="CourierID" ><![CDATA[10]]></Evaluate>
+      </Actions>
+    </Rule>
+	
+		  
+    <Rule id="RouteToC1" desc="RouteToC1" chainable="true"  priority="10">
+      <Condition><![CDATA[ (((Bond==800000) AND (Favorite == 0)) 
+	                    OR ((Bond==900000) AND (Favorite == 1)) 
+						OR ((Bond==1000000) AND (Favorite == 2))) 
+						AND (City == "Makati")  ]]></Condition>
+      <Actions>
+        <Evaluate factId="CourierID" ><![CDATA[0]]></Evaluate>
+      </Actions>
+    </Rule>
+    
+    <Rule id="Default" desc="Default" chainable="true"  priority="999">
+      <Condition><![CDATA[ Bond > 1 ]]></Condition>
+      <Actions>
+        <Evaluate factId="CourierID" ><![CDATA[99]]></Evaluate>
+      </Actions>
+    </Rule> 
+  </Rules>
+
+  <Facts>
+    <Fact id="Bond" desc="Bond" type="double" modelId="Courier">
+      <xpath><![CDATA[ number(Courier/Bond) ]]></xpath>
+    </Fact>
+	<Fact id="Favorite" desc="Favorite" type="double" modelId="Courier">
+      <xpath><![CDATA[ number(Courier/Favorite) ]]></xpath>
+    </Fact>
+	<Fact id="City" desc="City" type="string" modelId="Courier">
+      <xpath><![CDATA[ Courier/City ]]></xpath>
+    </Fact>
+    <Fact id="CourierID" desc="Courier ID" type="double" modelId="Courier">
+      <xpath><![CDATA[ Courier/CourierID ]]></xpath>
+    </Fact>
+	 
+   
+ 
+ 
+  </Facts>
+
+</RuleEngine>
